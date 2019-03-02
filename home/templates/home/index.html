@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+{% load staticfiles %}
+<html>
+	<head>
+		<title>Solid State by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">
+							<div class="logo"><span class="icon fa-diamond"></span></div>
+							<h2>This is Currency Exchange Converter</h2>
+							<p>It can be used to calculate and see currency exchange rates.</p>
+						</div>
+					</section>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+
+						<!-- One -->
+							<section id="one" class="wrapper spotlight style1">
+								<div class="inner">
+									<div class="content">
+										<form>
+											<h2>The Base Currency</h2>
+										<input id="text_1" type="text" value="EUR" readonly>
+										<p>The Euro is fixed due to financial reasons.</p>
+										<br>
+										<h2>The Currency I Want</h2>
+									<select id="damned">
+										{% for i in data %}
+										 <option value="{{i.currency}}">{{i.currency}}</option>
+										 {% endfor %}
+									</select>
+									<br>
+								</form>
+									<button id="button_0">Check</button>
+									</div>
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="two" class="wrapper alt spotlight style2" style="display:none">
+								<div class="inner">
+									<div class="content">
+										<h2 class="major">Rates</h2>
+										<form>
+											<h3>EUR</h3>
+											<input id="text_11"type="text" value="1">
+											<br>
+											<h3>To</h3>
+											<h3 id="head1"></h3>
+											<input id="text_2" type="text" readonly>
+											<p>*please move the mouse and click anywhere to see the desired output immedaetly.</p>
+										</form>
+									</div>
+								</div>
+							</section>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<h2 class="major">About The Developer</h2>
+						<p>Often Goes By the name of Vikky aka LAX.</p>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'js/jquery.min.js' %}"></script>
+			<script src="{% static 'js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'js/browser.min.js' %}"></script>
+			<script src="{% static 'js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'js/util.js' %}"></script>
+			<script src="{% static 'js/main.js' %}"></script>
+			<script src="{% static 'js/exc.js' %}"></script>
+
+	</body>
+</html>
